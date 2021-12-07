@@ -4,6 +4,7 @@ These scripts automate exporting all database and collections from a MongoDB ins
 
 ## Generic Steps
 
+This assumes you already have all the MongoDB tools installed (mongosh, mongoexport, mongoimport).
 Edit the _MONGODB_URI_ to enter a valid MongoDB URI (make sure the user has enough privileges either for exporting the data or importing the data)
 
 ## Export MongoDB Data
