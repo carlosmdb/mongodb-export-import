@@ -10,6 +10,7 @@ Edit the _MONGODB_URI_ to enter a valid MongoDB URI (make sure the user has enou
 ## Export MongoDB Data
 
 Edit the _SKIP_DATABASES_variable to define which databases you do not want to export.
+
 Edit the_FOLDER_ variable to change the default folder.
 Run the script:
 
@@ -19,7 +20,10 @@ Run the script:
 
 ## Import MongoDB Data
 
-Edit the _FOLDER_ variable to change the default folder where the files will be imported from. IMPORTANT: it assumes all the files are valid MongoDB data files (created using the _mongoimport_ tool).
+Edit the _FOLDER_ variable to change the default folder where the files will be imported from.
+
+IMPORTANT: it assumes all the files are valid MongoDB data files (created using the _mongoimport_ tool).
+
 Run the script:
 
 ```bash
