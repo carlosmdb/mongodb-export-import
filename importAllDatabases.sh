@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MONGODB_URI="mongodb+srv://<username>:<password>@<host>"
-FOLDER="data"
+MONGODB_URI="${MONGODB_URI:-mongodb+srv://<username>:<password>@<host>}"
+FOLDER="${FOLDER:-data}"
 
 for file in ${FOLDER}/*; do
   filename=$(basename "$file")

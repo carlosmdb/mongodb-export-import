@@ -5,13 +5,14 @@ These scripts automate exporting all database and collections from a MongoDB ins
 ## Generic Steps
 
 This assumes you already have all the MongoDB tools installed (mongosh, mongoexport, mongoimport).
-Edit the _MONGODB_URI_ to enter a valid MongoDB URI (make sure the user has enough privileges either for exporting the data or importing the data)
+
+Set _MONGODB_URI_ environment variable to enter a valid MongoDB URI (make sure the user has enough privileges either for exporting the data or importing the data)
 
 ## Export MongoDB Data
 
-Edit the _SKIP_DATABASES_variable to define which databases you do not want to export.
+Set _SKIP_DATABASES_ environment variable to define which databases you do not want to export.
 
-Edit the_FOLDER_ variable to change the default folder.
+Set _FOLDER_ environment variable to change the default folder.
 Run the script:
 
 ```bash
@@ -27,7 +28,7 @@ IMPORTANT: it assumes all the files are valid MongoDB data files (created using 
 Run the script:
 
 ```bash
-./exportAllDatabases.sh
+./importAllDatabases.sh
 ```
 
 ## Disclaimer

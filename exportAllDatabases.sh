@@ -1,8 +1,9 @@
 #!/bin/bash
 
-MONGODB_URI="mongodb+srv://<username>:<password>@<host>"
-SKIP_DATABASES=("__realm_sync" "admin" "config" "local")
-FOLDER="data"
+MONGODB_URI="${MONGODB_URI:-mongodb+srv://<username>:<password>@<host>}"
+SKIP_DATABASES="${SKIP_DATABASES:-("__realm_sync" "admin" "config" "local")}"
+FOLDER="${FOLDER:-data}"
+
 DATABASES=$(mongosh "$MONGODB_URI/test" --quiet --eval "show databases" | sed 's/ .*//')
 
 for database in $DATABASES; do
