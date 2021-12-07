@@ -2,7 +2,7 @@
 
 MONGODB_URI="mongodb+srv://<username>:<password>@<host>"
 SKIP_DATABASES=("__realm_sync" "admin" "config" "local")
-
+FOLDER="data"
 DATABASES=$(mongosh "$MONGODB_URI/test" --quiet --eval "show databases" | sed 's/ .*//')
 
 for database in $DATABASES; do
@@ -17,7 +17,7 @@ for database in $DATABASES; do
     COLLECTIONS=$(mongosh "$MONGODB_URI/$database" --quiet --eval "show collections" | sed 's/ .*//')
     for coll in $COLLECTIONS; do
       printf "Exporting $coll collection...\n"
-      result=$(mongoexport --uri="$MONGODB_URI/$database" -c "$coll" -o "$database.$coll".json)
+      result=$(mongoexport --uri="$MONGODB_URI/$database" -c "$coll" -o "$FOLDER/$database.$coll".json)
       printf "Done!\n"
     done
   fi
